@@ -5,10 +5,10 @@ import os
 
 
 
-client = discord.Client(intents=discord.Intents.default())
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
-
+intents = discord.Intents().all()
+client = discord.Client(intents=intents)
 
 
 
@@ -28,11 +28,9 @@ async def on_message(message):
         await message.channel.send('Hello!')
     
         
-  
-
-
 
 client.run(TOKEN)
+
 
 
 
